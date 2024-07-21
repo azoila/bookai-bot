@@ -20,7 +20,7 @@ Para utilizar o Supabase no ambiente de desenvolvimento e deploy, siga os passos
 * **Exportar o token para o terminal ativo:**
 
   ```bash
-  ➜  bookai export SUPABASE_ACCESS_TOKEN=
+  ➜  export SUPABASE_ACCESS_TOKEN=
   ```
 
 * **Executar localmente:**
@@ -32,14 +32,18 @@ Para utilizar o Supabase no ambiente de desenvolvimento e deploy, siga os passos
 * **Fazer o deploy para produção:**
 
   ```bash
-  ➜  bookai supabase functions deploy bot-get --project-ref tpgbhcsidmskfssybmlt --import-map supabase/functions/import_map.json
+  ➜ supabase functions deploy bot-get --project-ref tpgbhcsidmskfssybmlt --import-map supabase/functions/import_map.json
   ```
 
 * **Fazer um teste:**
 
 ```bash
-➜  bookai curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/bot-get' \  
-  --header 'Authorization: Bearer XXXXXXXXXXX' \
-  -d "Body= " \
-  -d "From=whatsapp:+1234567890"
+➜ curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/bot-get' \
+  --header 'Authorization: Bearer XXXXXXXXXXXXXX
+  --data-urlencode "Body=Olá, isto é um teste" \
+  --data-urlencode "From=whatsapp:+1234567890" \
+  --data-urlencode "To=whatsapp:+0987654321" \
+  --data-urlencode "MessageSid=SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+  --data-urlencode "AccountSid=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+  --data-urlencode "MessagingServiceSid=MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
