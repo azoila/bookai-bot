@@ -1,7 +1,3 @@
-Aqui está o README formatado de forma mais clara e organizada:
-
----
-
 ## Breve Documentação Técnica Book.AI
 
 Para funcionalidade básica do BOT Twilio + Supabase.
